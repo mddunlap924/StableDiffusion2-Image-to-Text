@@ -1,0 +1,30 @@
+# YAML file listing config. parameters
+debug: False
+
+model:
+  name: 'coca_ViT-L-14'
+  checkpoint: "./kaggle/input/open-clip-models/mscoco_finetuned_CoCa-ViT-L-14-laion2B-s13B-b90k.bin"
+  
+train_params:
+  batch_size: 6
+  epochs: 1
+  lr: 1.0E-5
+  warmup: 1_000
+  wd: 0.1
+  coca_contrastive_loss_weight: 0
+  coca_caption_loss_weight: 1
+
+datasets:
+  train: './kaggle/diffusiondb_ds2_ds3-2000_Train_TRUN250_filts.csv'
+  val: './kaggle/val_data.csv'
+  sample:
+    base_dir: './kaggle/input/stable-diffusion-image-to-prompts'
+    csv_name: 'prompts.csv'
+
+wandb:
+  mode: 'online'  #['disabled', 'offline', 'online']
+  project: StableDiffusion
+  log_results: True
+  interval_type: steps #[epochs, steps]
+  interval_delta: 1 #[int describing numer of intervals]
+  log_every_n_steps: 100

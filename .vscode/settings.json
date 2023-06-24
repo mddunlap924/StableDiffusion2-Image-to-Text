@@ -1,0 +1,19 @@
+{
+    "editor.mouseWheelZoom": true,
+    "notebook.lineNumbers": "on",
+    "python.terminal.activateEnvironment": true,
+    "editor.rulers": [100],
+    "python.linting.pylintEnabled": true,
+    "python.linting.enabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=missing-class-docstring",
+        "--disable=missing-function-docstring",
+        "--disable=missing-module-docstring",
+        "--max-line-length=100"
+    ],
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 500,
+    "terminal.integrated.env.linux": {"PYTHONPATH": "${workspaceFolder}"},
+    "python.envFile": "${workspaceFolder}/.env",
+    "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+}

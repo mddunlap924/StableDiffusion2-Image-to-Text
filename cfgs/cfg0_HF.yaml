@@ -1,0 +1,32 @@
+# YAML file listing config. parameters
+debug: False
+
+model:
+  name: openai/clip-vit-large-patch14
+  
+train_params:
+  batch_size: 64
+  epochs: 1
+  lr: 1.0E-4
+  eta_min: 1.0E-6
+  img_aug:
+    horizontal_flip: 0.0
+  unfreeze:
+    apply: False
+    unfreeze_start: 21 # set it to lower number when significantly more samples are included
+
+datasets:
+  # train: './kaggle/diffusiondb_ds2_ds3_ds5_ds6_ds8-2000_Train_TRUNNone_cos_sim_False95.csv'
+  # train: './kaggle/diffusiondb_ds2_ds3_ds5_ds6_ds8-2000_Train_TRUN200_cos_sim_False95.csv'
+  train: './kaggle/ds9-ds10-ds11-ds12-ds16-2000_Train_TRUNNone_cos_sim_True0.csv'
+  val: './kaggle/val_data_2.csv'
+  sample:
+    base_dir: './kaggle/input/stable-diffusion-image-to-prompts'
+    csv_name: 'prompts.csv'
+
+wandb:
+  mode: 'online'  #['disabled', 'offline', 'online']
+  project: StableDiffusion
+  log_results: True
+  interval_type: steps #[epochs, steps]
+  interval_delta: 1 #[int describing numer of intervals]

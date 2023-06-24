@@ -1,0 +1,14 @@
+__pycache__/
+.venv/
+kaggle/
+notebooks/kaggle/
+vit-train/
+output/
+.vscode/
+.env
+./vit_base_patch16_224.pth
+logs/
+wandb/
+coca-finetune/
+hf-vit/
+prompts/
